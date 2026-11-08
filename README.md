@@ -13,6 +13,7 @@ The most comprehensive Python wrapper for the **Seedance 2.5 Spicy API** (develo
 
 ## Related Projects
 
+- [Spicy AI Video Generator API](https://github.com/Anil-matcha/Spicy-AI-Video-Generator-API) — compare spicy video endpoints across Seedance 2.5/2, Wan 3.0 and MiniMax H3 in one guide.
 - [Seedance-2-API](https://github.com/Anil-matcha/Seedance-2-API) — Python wrapper for the standard-moderation Seedance 2.0, 2.5, and 2 Mini API.
 - [Seedance-2-Spicy-API](https://github.com/Anil-matcha/Seedance-2-Spicy-API) — Python SDK and MCP server for the Seedance 2 Spicy tier.
 - [Wan-3.0-Spicy-API](https://github.com/Anil-matcha/Wan-3.0-Spicy-API) — Python SDK and MCP server for the Wan 3.0 Spicy tier.
