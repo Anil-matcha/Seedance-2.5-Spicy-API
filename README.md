@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 
-The most comprehensive Python wrapper for the **Seedance 2.5 Spicy API** (developed by ByteDance), delivered via [muapi.ai](https://muapi.ai?utm_source=github&utm_medium=readme&utm_campaign=seedance-2.5-spicy-api). Seedance 2.5 Spicy is the relaxed-moderation variant of the [Seedance 2.5](https://github.com/Anil-matcha/Seedance-2-API) flagship model — native 4K, up to 30-second clips, native audio, and precise camera trajectory control, with **reduced content-safety filtering** and more dramatic, higher-contrast motion than the standard tier.
+An uncensored (relaxed-moderation) Seedance 2.5 API wrapper. The most comprehensive Python wrapper for the **Seedance 2.5 Spicy API** (developed by ByteDance), delivered via [muapi.ai](https://muapi.ai?utm_source=github&utm_medium=readme&utm_campaign=seedance-2.5-spicy-api). Seedance 2.5 Spicy is the relaxed-moderation variant of the [Seedance 2.5](https://github.com/Anil-matcha/Seedance-2-API) flagship model — native 4K, up to 30-second clips, native audio, and precise camera trajectory control, with **reduced content-safety filtering** and more dramatic, higher-contrast motion than the standard tier.
 
 > ⚠️ **Content policy notice**: "Spicy" means reduced automated content-safety filtering, not an anything-goes endpoint. Generated content still must comply with MuAPI's and the underlying provider's terms of service and applicable law. Do not use this API to generate content involving minors, non-consensual imagery, or other prohibited material.
 
