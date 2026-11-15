@@ -256,7 +256,7 @@ curl --location --request POST "https://api.muapi.ai/api/v1/seedance-2.5-spicy-m
 
 ### 8. Seedance 2.5 Flash Spicy (480p / 720p, fast and low-cost)
 
-Seedance 2.5 Flash Spicy is the faster, cheaper relaxed-moderation tier: 4-30 second 480p/720p clips with native audio at `$0.1254/sec` (480p) and `$0.2508/sec` (720p), 33% below spicy Seedance 2.5. Six endpoints, all `POST https://api.muapi.ai/api/v1/<endpoint>`:
+Seedance 2.5 Flash Spicy (served by the `nsfw-seedance-2-5-flash` model) is the faster, cheaper relaxed-moderation tier: 4-30 second 480p/720p clips with native audio at `$0.1254/sec` (480p) and `$0.2508/sec` (720p), 33% below spicy Seedance 2.5. Six endpoints, all `POST https://api.muapi.ai/api/v1/<endpoint>`:
 
 | Mode | Endpoint | Key fields |
 |---|---|---|
