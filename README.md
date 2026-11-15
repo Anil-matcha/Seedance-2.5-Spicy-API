@@ -254,6 +254,29 @@ curl --location --request POST "https://api.muapi.ai/api/v1/seedance-2.5-spicy-m
 
 ---
 
+### 8. Seedance 2.5 Flash Spicy (480p / 720p, fast and low-cost)
+
+Seedance 2.5 Flash Spicy is the faster, cheaper relaxed-moderation tier: 4-30 second 480p/720p clips with native audio at `$0.1254/sec` (480p) and `$0.2508/sec` (720p), about 26% below standard Seedance 2.5 pricing. Six endpoints, all `POST https://api.muapi.ai/api/v1/<endpoint>`:
+
+| Mode | Endpoint | Key fields |
+|---|---|---|
+| Text-to-Video | `seedance-2.5-flash-spicy-text-to-video` | `prompt`, `aspect_ratio`, `duration`, `resolution` |
+| Image-to-Video | `seedance-2.5-flash-spicy-image-to-video` | `prompt`, `image_url` |
+| First & Last Frame | `seedance-2.5-flash-spicy-first-last-frame` | `prompt`, `images_list` (2 URLs) |
+| Reference-to-Video | `seedance-2.5-flash-spicy-reference-to-video` | `images_list` (10), `videos_list` (5), `audios_list` (5) |
+| Video Edit | `seedance-2.5-flash-spicy-video-edit` | `prompt`, `video_url` |
+| Video Extend | `seedance-2.5-flash-spicy-video-extend` | `prompt`, `video_url`, `duration` |
+
+```python
+from seedance_2_5_spicy_api import Seedance25SpicyAPI
+
+api = Seedance25SpicyAPI()
+job = api.flash_text_to_video("A neon chase through a rainy city", resolution="720p", duration=5)
+print(api.wait_for_completion(job["request_id"]))
+```
+
+Edit and extend bill output plus source-video seconds at 65% of the per-second rate. Landing page and pricing: [muapi.ai/seedance-2.5-flash](https://muapi.ai/seedance-2.5-flash?utm_source=github&utm_medium=readme&utm_campaign=seedance-2.5-spicy-api). Use the endpoints above for 1080p and 4K.
+
 ## 💰 Pricing
 
 | Endpoint | Cost |

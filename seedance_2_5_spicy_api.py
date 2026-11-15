@@ -278,6 +278,43 @@ class Seedance25SpicyAPI:
             payload["prompt"] = prompt
         return self._post_request(endpoint, payload)
 
+    def flash(self, mode, prompt, **fields):
+        """
+        Submit a Seedance 2.5 Flash Spicy job (relaxed moderation, 480p/720p, 4-30s).
+        Priced at $0.1254/sec (480p) and $0.2508/sec (720p).
+
+        :param mode: text-to-video, image-to-video, first-last-frame, reference-to-video,
+                     video-edit, or video-extend.
+        :param fields: resolution, duration, aspect_ratio, generate_audio, seed, image_url,
+                       images_list, videos_list, audios_list, video_url.
+        """
+        modes = ("text-to-video", "image-to-video", "first-last-frame",
+                 "reference-to-video", "video-edit", "video-extend")
+        if mode not in modes:
+            raise ValueError("mode must be one of: " + ", ".join(modes))
+        payload = {"prompt": prompt}
+        payload.update({k: v for k, v in fields.items() if v is not None})
+        return self._post_request(f"{self.base_url}/seedance-2.5-flash-spicy-{mode}", payload)
+
+    def flash_text_to_video(self, prompt, **fields):
+        return self.flash("text-to-video", prompt, **fields)
+
+    def flash_image_to_video(self, prompt, image_url, **fields):
+        return self.flash("image-to-video", prompt, image_url=image_url, **fields)
+
+    def flash_first_last_frame(self, prompt, images_list, **fields):
+        return self.flash("first-last-frame", prompt, images_list=images_list, **fields)
+
+    def flash_reference_to_video(self, prompt, images_list=None, videos_list=None, audios_list=None, **fields):
+        return self.flash("reference-to-video", prompt, images_list=images_list,
+                          videos_list=videos_list, audios_list=audios_list, **fields)
+
+    def flash_video_edit(self, prompt, video_url, **fields):
+        return self.flash("video-edit", prompt, video_url=video_url, **fields)
+
+    def flash_video_extend(self, prompt, video_url, **fields):
+        return self.flash("video-extend", prompt, video_url=video_url, **fields)
+
     def _post_request(self, endpoint, payload):
         response = requests.post(endpoint, json=payload, headers=self.headers)
         response.raise_for_status()
